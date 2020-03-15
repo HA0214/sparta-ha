@@ -8,95 +8,124 @@
     <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Gugi|Nanum+Brush+Script|Nanum+Gothic|Nanum+Pen+Script&display=swap" rel="stylesheet">
 
-    <!-- style -->
-    <style type="text/css">
-        * {
+    <!-- style CSS-->
+    <style>
+
+        /* Google Fonts */
+        *{
             font-family: 'Nanum Gothic', sans-serif;
         }
-       
+
         .wrap {
-            max-width: 400px;
+            width: 600px;
             margin: auto;
-        }
-     
-        h1 {
-            margin-bottom: 12px
+            padding: 3rem;
         }
 
-        #ItemName {
-            font-size: 20pt;
+        .ProductImage {
+            display:block;
+            width: 100%;
+            height:auto;
+            border: solid;
+        }
+
+        .ItemName {
+            font-size: 30px;
             font-weight: bold;
         }
 
-        #ItemPrice {
+        .ItemPrice {
             font-size: 11pt;
-            margin: 16pt;
+            font-weight: bold;
+            margin: 15px;
         }
 
-        .ProductInfo {
-            margin: 0 auto 20px auto;
+
+        /* 부트스트랩 버튼에 클래스명 지정하고, 중앙정렬 */
+        .orderbutton {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content : center;
+        }
+ 
+        /* 부트스트랩 버튼에 display block 설정하고, 클래스명 지정 후, 넓이 설정 */
+        .mybtn{
+          width:40%;
         }
 
-        .ProductOrderInfo {
-            margin: 20px auto 0 auto;
-        }
-
-        .form-group {
-            margin: auto;
-            padding: 6px;
-        }
-
-        .ButtonOrder {
-            text-align: center;
-            margin: 20px;
-        }
     </style>
 
 </head>
 
 <body>
+    <!-- wrap 시작 -->
     <div class="wrap">
-        <div class="ProductImage">
-            <img src="http://www.meehong.co.kr/pmw0707b25/component/board/board_9/u_image/2/564532753_ED9689EC82ACEB96A1ECBC80EC9DB4ED81AC2.jpg"
-               >
+
+        <!-- 상품 사진 영역 -->
+        <div>
+            <img class="ProductImage" src="https://i.imgur.com/b465zat.jpg">
         </div>
-   
-        <div class="ProductInfo">
-            <h1 id="ItemName">행사용 떡케이크<span id="ItemPrice">가격: 300,000원/개</span></h1>
-            <p>회사 기념일 행사시 이 세상에서 단 하나뿐인 떡케이크를 준비하여 행사를 더욱 가치있게 만드세요!!!</p>
+
+        <!-- 상품 제목 영역 -->
+        <div>
+            <span class="ItemName">벚꽃떡세트</span>
+            <span class="ItemPrice">가격: 20,000원/1세트 </span>
+            <p>봄의 아름다움을 알려주는 벚꽃의 화사함을 더욱 축하하고, 사랑하는 사람에게 추억을 만들어 드릴 수 있는 벚꽃떡을 선물하세요!!!</p>
         </div>
-        <hr>
-        <div class="ProductOrderInfo">        
-            <div class="form-group">
-                주문자 이름
-                <input type="text" style="width:280px ;height:30px;">
+
+        <!-- 주문하기 영역 -->
+        <div>
+            <!-- 인풋박스 영역. bootstrap 사용 -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">주문자 성함</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="form-group">
-                수량
-                <input type="number" placeholder="--수량을 선택하세요--" min="1" max="10" step="1" style="width:330px ;height:30px;font-size:14px;">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">수량</span>
+                </div>
+                <input type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" placeholder="---수량을 선택하세요---">
             </div>
 
-            <div class="form-group">
-                주소
-                <input type="text" style="width:330px ;height:30px;">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
             </div>
 
-            <div class="form-group">
-                전화번호
-                <input type="text" style="width:300px ;height:30px;">                
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+                </div>
+                <input type="tel" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default">
             </div>
         </div>
-        <div class="ButtonOrder">
-            <button type="button" class="btn btn-primary">주문하기</button>
+
+        <!-- 주문하기 버튼 영역. bootstrap 사용 -->
+        <!-- display block 설정해서 풀어줌 -->
+
+        <div class="orderbutton">
+            <button type="button" class="btn btn-primary btn-lg mybtn" display="block">주문하기</button>
         </div>
+
+    <!-- wrap 끝 -->
     </div>
 </body>
 
