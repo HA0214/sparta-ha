@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework 1Week ha</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Gugi|Nanum+Brush+Script|Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        * {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        /* Q blank lines 간격은 그대로 두고, 소제목과 본문 내용 사이에 동일한 간격을 동시에 주는 방법은? /A h1으로 동일하게 변경하고, 동시에 스타일 적용해서 해결! */
+        .wrap {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        img {
+            display: block;
+            width: 80%;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 4px;
+            border-style: solid;
+            border-color: #e1e4dc;
+            border-width: 0.5px;
+        }
+
+        /* Q 동일 Heading 내에서는 폰트 크기/스타일/색상변경 불가능한가? /A 불가능! */
+        /* Q 소제목 아래쪽에 margin이나 padding을 줘도 아래 본문과 간격이 늘어나지 않는 이유는? /A 소제목 아이템명만 span에서 h1으로 바꾸고 해결!*/
+
+        h1 {
+            margin-bottom: 12px
+        }
+
+        #ItemName {
+            font-size: 20pt;
+            font-weight: bold;
+        }
+
+        #ItemPrice {
+            font-size: 11pt;
+            margin: 16pt;
+        }
+
+        .ProductInfo {
+            margin: 0 auto 20px auto;
+        }
+
+        .ProductOrderInfo {
+            margin: 20px auto 0 auto;
+        }
+
+        .form-group {
+            margin: auto;
+            padding: 6px;
+        }
+
+        .ButtonOrder {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="ProductImage">
+            <img src="http://www.meehong.co.kr/pmw0707b25/component/board/board_9/u_image/2/564532753_ED9689EC82ACEB96A1ECBC80EC9DB4ED81AC2.jpg"
+               >
+        </div>
+
+        <!-- 제목 아래에 간격을 주고 싶은데 br 안 먹히는 이유ㅠㅠ -->
+        <div class="ProductInfo">
+            <h1 id="ItemName">행사용 떡케이크<span id="ItemPrice">가격: 300,000원/개</span></h1>
+            <p>회사 기념일 행사시 이 세상에서 단 하나뿐인 떡케이크를 준비하여 행사를 더욱 가치있게 만드세요!!!</p>
+        </div>
+        <hr>
+        <div class="ProductOrderInfo">        
+            <div class="form-group">
+                주문자 이름
+                <input type="text" style="width:280px ;height:30px;">
+            </div>
+
+            <div class="form-group">
+                수량
+                <input type="number" placeholder="--수량을 선택하세요--" min="1" max="10" step="1" style="width:330px ;height:30px;font-size:14px;">
+            </div>
+
+            <div class="form-group">
+                주소
+                <input type="text" style="width:330px ;height:30px;">
+            </div>
+
+            <div class="form-group">
+                전화번호
+                <input type="text" style="width:300px ;height:30px;">                
+            </div>
+
+        </div>
+
+        <div class="ButtonOrder">
+            <button type="button" class="btn btn-primary">주문하기</button>
+        </div>
+    </div>
+</body>
+
+</html>
