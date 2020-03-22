@@ -4,7 +4,7 @@
 
 <head>
     <!-- Webpage Title -->
-    <title>homework 1Week ha</title>
+    <title>homework 2Week ha</title>
 
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -16,12 +16,16 @@
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Gugi|Nanum+Brush+Script|Nanum+Gothic|Nanum+Pen+Script&display=swap" rel="stylesheet">
@@ -60,7 +64,7 @@
 
 
         /* 부트스트랩 버튼에 클래스명 지정하고, 중앙정렬 */
-        .orderbutton {
+        .ButtonOrder {
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -75,6 +79,44 @@
     </style>
 
 </head>
+
+
+<script>
+    function checkphone(p) {
+    var regExp = /^\d{3}-\d{4}-\d{4}$/;
+    return regExp.test(p);
+    }
+ 
+    function order() {
+    let name = $("#clientName").val();
+    let amounts = $("#orderAmount").val();
+    let address = $("#clientAddress").val();
+    let phone = $("#clientContact").val();
+ 
+    if (name == "") {
+        alert("성함을 입력해주세요");
+        $("#clientName").focus();
+  
+    } else if (amounts == "") {
+        alert("수량을 입력해주세요");
+        $("#orderAmount").focus();
+  
+    } else if (address == "") {
+        alert("주소를 입력해주세요");
+        $("#clientAddress").focus();
+ 
+    } else if (phone == "") {
+        alert("전화번호를 입력해주세요");
+        $("#clientContact").focus();
+   
+    } else if (!checkphone(phone)) {
+        alert(
+        "전화번호 입력형식이 다릅니다. \n xxx-xxxx-xxxx 형식으로 입력해주세요"
+        );
+        $("#clientContact").focus();
+    }
+    }
+</script>
 
 <body>
     <!-- wrap 시작 -->
@@ -97,33 +139,39 @@
             <!-- 인풋박스 영역. bootstrap 사용 -->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">주문자 성함</span>
+                    <span class="input-group-text" >주문자 이름</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input"
+                <input type="text" class="form-control" id="clientName" placeholder="" aria-label="Sizing example input"
+                    aria-describedby="clientName">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="orderAmount">수량</label>
+                </div>
+                <select class="custom-select" id="orderAmount" name="Amounts">
+                    <option value="">---수량을 입력해주세요---</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+              </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >주소</span>
+                </div>
+                <input type="text" class="form-control" id="clientAddress" placeholder="" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default">
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">수량</span>
+                    <span class="input-group-text">전화번호</span>
                 </div>
-                <input type="number" class="form-control" id="order_count" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default" placeholder="---수량을 선택하세요---">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
-                </div>
-                <input type="tel" class="form-control" aria-label="Sizing example input"
+                <input type="tel" class="form-control" id="clientContact" placeholder="" aria-label="Sizing example input"
                     aria-describedby="inputGroup-sizing-default">
             </div>
         </div>
@@ -131,9 +179,9 @@
         <!-- 주문하기 버튼 영역. bootstrap 사용 -->
         <!-- display block 설정해서 풀어줌 -->
 
-        <div class="orderbutton">
-            <button type="button" class="btn btn-primary btn-lg mybtn" display="block">주문하기</button>
-        </div>
+        <div class="ButtonOrder">
+            <input type="submit" value="주문하기" onclick="order()" />
+          </div>
 
     <!-- wrap 끝 -->
     </div>
