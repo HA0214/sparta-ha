@@ -18,5 +18,5 @@ for music in musics:
     a_tag = music.select('td.info > a')
     rank += 1
     title = a_tag[0]
-    singer = a_tag[1]
-    print(rank, title.text.strip(), singer.text.strip())
+    artist = a_tag[1]
+    print(rank, title.text.strip(), artist.text.strip())
