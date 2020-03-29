@@ -12,11 +12,11 @@ soup = BeautifulSoup(data.text, 'html.parser')
 musics = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
 
 # musics (tr들) 의 반복문을 돌리기
-rank = 1
+rank = 0
 for music in musics:
     # music 안에 a 가 있으면,
     a_tag = music.select('td.info > a')
+    rank += 1
     title = a_tag[0]
     singer = a_tag[1]
     print(rank, title.text.strip(), singer.text.strip())
-    rank += 1
